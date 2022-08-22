@@ -9,11 +9,10 @@ spring:
       password: ShanYiChun@3452
   cloud:
     nacos:
-      server-addr: http://43.142.116.134:8848
       discovery:
         cluster-name: XT
-  application:
-    name: userservice
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#pattern:
+#  dateformat: yyyy:MM:dd HH:mm:ss

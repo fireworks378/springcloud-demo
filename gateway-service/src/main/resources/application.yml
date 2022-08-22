@@ -1,11 +1,7 @@
 server:
   port: 10010
 spring:
-  application:
-    name: gatewayservice
   cloud:
-    nacos:
-      server-addr: http://43.142.116.134:8848
     gateway:
       routes:
         - id: user-service
@@ -14,5 +10,9 @@ spring:
             - Path=/user/**
           filters:
             - AddRequestHeader=truth,itcast is awesome;
-      default-filters:
-        - AddRequestHeader=Truth,Itcast Is Awesome;
+        - id: order-service
+          uri: lb://orderservice
+          predicates:
+            - Path=/order/**
+#      default-filters:
+#        - AddRequestHeader=Truth,It-cast Is Awesome;

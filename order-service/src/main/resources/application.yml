@@ -7,11 +7,8 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
       password: ShanYiChun@3452
-  application:
-    name: orderservice
   cloud:
     nacos:
-      server-addr: http://43.142.116.134:8848
       discovery:
         cluster-name: XT
 mybatis-plus:
