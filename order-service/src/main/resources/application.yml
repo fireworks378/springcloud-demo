@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://sh-cynosdbmysql-grp-miqa83wc.sql.tencentcdb.com:20820/springcloud-order
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: ShanYiChun@3452
+  application:
+    name: orderservice
+  cloud:
+    nacos:
+      server-addr: http://43.142.116.134:8848
+      discovery:
+        cluster-name: XT
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+feign:
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50

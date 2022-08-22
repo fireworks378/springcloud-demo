@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://sh-cynosdbmysql-grp-miqa83wc.sql.tencentcdb.com:20820/springcloud-user
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: ShanYiChun@3452
+  cloud:
+    nacos:
+      server-addr: http://43.142.116.134:8848
+      discovery:
+        cluster-name: XT
+  application:
+    name: userservice
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
