@@ -15,7 +15,7 @@ public class AuthorizeFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         MultiValueMap<String, String> params = exchange.getRequest().getQueryParams();
-        String authorization = params.getFirst("authorization");
+        String authorization = params.getFirst("author");
         if("admin".equals(authorization)) return chain.filter(exchange);
         else {
             exchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
